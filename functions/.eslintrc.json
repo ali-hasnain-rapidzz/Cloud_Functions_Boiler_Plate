@@ -16,10 +16,6 @@
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
-  // "parserOptions": {
-  //   "project": ["./functions/tsconfig.json"],
-  //   "sourceType": "module"
-  // },
   "settings": {
     "import/resolver": {
       "typescript": {
@@ -28,6 +24,8 @@
     }
   },
   "rules": {
+    "require-jsdoc": "off",
+    "no-useless-catch": "off",
     "import/no-relative-packages": "off",
     "import/no-duplicates": "off",
     "import/namespace": "off",
@@ -36,6 +34,7 @@
     "new-cap": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": "off",
     "prettier/prettier": [
       "error",
       {

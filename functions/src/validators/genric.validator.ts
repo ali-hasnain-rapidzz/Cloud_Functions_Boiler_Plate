@@ -6,9 +6,13 @@ export const createValidationSchema = (fieldName: string, fieldType: ZodSchema) 
   });
 };
 
-export const phoneValidationSchema = createValidationSchema("phone", z.string());
+export const phoneValidationSchema = z.object({
+  phone: z.string(),
+});
 export type phoneValidationType = z.infer<typeof phoneValidationSchema>;
 
-export const emailValidationSchema = createValidationSchema("email", z.string().email());
+export const emailValidationSchema = z.object({
+  email: z.string().email(),
+});
 
 export type ValidationType<T extends ZodSchema> = z.infer<T>;

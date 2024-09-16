@@ -1,0 +1,98 @@
+{
+  "root": true,
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "ignorePatterns": ["lib/**", "node_modules/**"],
+  "plugins": ["@typescript-eslint", "validate-filename", "import", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "google",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  // "parserOptions": {
+  //   "project": ["./functions/tsconfig.json"],
+  //   "sourceType": "module"
+  // },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": "./functions/tsconfig.json"
+      }
+    }
+  },
+  "rules": {
+    "import/no-relative-packages": "off",
+    "import/namespace": "off",
+    "import/no-unresolved": "off",
+    "quotes": ["error", "double"],
+    "new-cap": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.tsx", "**/*.ts"],
+      "rules": {
+        "validate-filename/naming-rules": [
+          "error",
+          {
+            "rules": [
+              {
+                "case": "snake",
+                "target": "**/config/**",
+                "patterns": "^.*\\.conf\\.ts$"
+              },
+              {
+                "case": "snake",
+                "target": "**/constants/**",
+                "patterns": "^.*\\.constants\\.ts$"
+              },
+              {
+                "case": "snake",
+                "target": "**/libraries/**",
+                "patterns": "^.*\\.lib\\.ts$"
+              },
+              {
+                "case": "snake",
+                "target": "**/types/**",
+                "patterns": "^.*\\.(types|d)\\.ts$"
+              },
+              {
+                "case": "snake",
+                "target": "**/utils/**",
+                "patterns": "^.*\\.util\\.ts$$"
+              },
+              {
+                "case": "snake",
+                "target": "**/validators/**",
+                "patterns": "^.*\\.validator\\.ts$"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["lib/**/*"],
+      "rules": {
+        "import/no-unresolved": "off",
+        "no-restricted-imports": "off",
+        "no-restricted-modules": "off",
+        "validate-filename/naming-rules": "off"
+      }
+    }
+  ]
+}

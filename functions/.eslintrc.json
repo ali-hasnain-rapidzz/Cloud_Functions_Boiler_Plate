@@ -29,6 +29,7 @@
   },
   "rules": {
     "import/no-relative-packages": "off",
+    "import/no-duplicates": "off",
     "import/namespace": "off",
     "import/no-unresolved": "off",
     "quotes": ["error", "double"],

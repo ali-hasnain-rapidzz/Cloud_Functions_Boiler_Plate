@@ -20,7 +20,7 @@
 
 import * as admin from "firebase-admin";
 import { onNotificationCreate } from "./functions/notifications/on_notification_create";
-import { deleteDocument } from "./functions/readers/delete_document";
+import { deleteDocument } from "./functions/user/delete_document";
 
 // Initialize Firebase Admin SDK once
 admin.initializeApp();

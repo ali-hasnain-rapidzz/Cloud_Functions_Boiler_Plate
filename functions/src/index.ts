@@ -19,8 +19,8 @@
 // });
 
 import * as admin from "firebase-admin";
-import { onNotificationCreate } from "./functions/notifications/on_notification_create";
-import { deleteDocument } from "./functions/user/delete_document";
+import { onNotificationCreate } from "./functions/routes/notification.routes";
+import { deleteDocument } from "./functions/routes/document.routes";
 
 // Initialize Firebase Admin SDK once
 admin.initializeApp();
